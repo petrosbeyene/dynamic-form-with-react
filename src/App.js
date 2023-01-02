@@ -1,9 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
+import GroupForm from './components/GroupForm';
 
 function App() {
   return (
-    <h1>Hello New App</h1>
+      <GroupForm/>
   );
 }
 
