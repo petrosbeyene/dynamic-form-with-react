@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState }from "react";
 import Button from 'react-bootstrap/Button'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../index.css'
 
 const GroupForm = (props) => {
-    
+    const [groupContent, setGroupContent] = useState(`group${props.index}`)
+
     return(
         <div className="container border">
             <div className="border-bottom ml-0 mr-0 mb-2 row">
@@ -14,7 +15,9 @@ const GroupForm = (props) => {
             <form className="row">
                 <div className="col mr-2">
                     <Button variant="danger" className="m-2" onClick={props.deleteForm}>-</Button>
-                    <input type='text' value={`group${props.index}`}/>
+                    <input type='text' 
+                            value={groupContent} 
+                            onChange={(e)=>setGroupContent(e.target.value)}/>
                 </div>
                 <div className="col">
                     {props.slots}
